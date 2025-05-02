@@ -10,6 +10,7 @@ const deleteuser = require('./Routes/auth/Deleteuser')
 const Edituser =  require('./Routes/auth/Editeuser')
 const AddProduct = require('./Routes/ProductRoutes/AddProduct')
 const FilterProduct = require('./Routes/ProductRoutes/FilterProduct')
+const deletproduct = require('./Routes/ProductRoutes/DeleteProduct')
 
 const app = express()
 app.use(cors())
@@ -21,10 +22,13 @@ app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
   app.use('/SignUp',signuproute)
   app.use('/Dashboard/Adduser',signuproute)
   app.use('/Dashboard/deleteuser', deleteuser)
+  app.use('/Dashboard/deletproduct', deletproduct)
   app.use('/Dashboard/Edituser', Edituser)
   app.use('/Dashboard/AddProduct', AddProduct)
-  app.use('/:category/:Sub_Category', AddProduct)
+  
   app.use('/products', FilterProduct)
+  app.use('/:category/:Sub_Category', AddProduct)
+  
 
 
 

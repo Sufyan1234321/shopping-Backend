@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
   const rawSearch = req.query.search || '';
-          console.log(rawSearch)
+  console.log(rawSearch)
   // Normalize search: remove spaces and dashes, convert to lowercase
   const normalizedSearch = rawSearch.toLowerCase().replace(/[-\s]/g, '');
 
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     const collections = await db.listCollections().toArray();
 
     const results = [];
-console.log(results)
+    console.log(results)
     for (let col of collections) {
       const collection = db.collection(col.name);
 
@@ -21,7 +21,7 @@ console.log(results)
 
       // Filter documents where title matches normalized search
       const filtered = docs.filter(doc => {
-       
+
         if (!doc.title) return false;
         const normalizedTitle = doc.title.toLowerCase().replace(/[-\s]/g, '');
         return normalizedTitle.includes(normalizedSearch);
