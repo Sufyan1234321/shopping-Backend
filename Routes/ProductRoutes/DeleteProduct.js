@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
+const cors = require("cors")
 const productModel = require('../../module/ProductModel');  // Assuming you have a ProductModel schema
+
+
+app.use(cors())
 
 // Route to get all products from all collections
 router.get('/', async (req, res) => {
