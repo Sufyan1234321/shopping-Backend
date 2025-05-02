@@ -22,7 +22,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
   app.use('/SignUp',signuproute)
   app.use('/Dashboard/Adduser',signuproute)
   app.use('/Dashboard/deleteuser', deleteuser)
-  app.use('/Dashboard/deletproduct', deletproduct)
+  app.use('/Dashboard/deleteproduct', deletproduct)
   app.use('/Dashboard/Edituser', Edituser)
   app.use('/Dashboard/AddProduct', AddProduct)
   
