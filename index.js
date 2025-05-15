@@ -2,7 +2,6 @@ const express = require("express")
 const connectDB = require("./module/connection")
 require('dotenv').config();
 const cors = require("cors")
-require('dotenv').config();
 const path = require("path");
 const loginRoute = require("./Routes/auth/Login");
 const signuproute = require('./Routes/auth/SignUp');
@@ -34,6 +33,6 @@ app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 
 
-app.listen(process.env.PORT || 4000, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log("hello")
 })
